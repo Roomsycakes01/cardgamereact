@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Route, Routes
 } from "react-router-dom";
-import LandingPage from "../Components/LandingPage";
+import LandingPage from "../Components/Pages/LandingPage/LandingPage";
 import App from "../App";
 
 export default function ProjectRoutes() {

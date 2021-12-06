@@ -1,6 +1,6 @@
 
 import {Link} from "react-router-dom";
-import GameArea from "./Components/GameArea";
+import GameArea from "./Components/GameArea/GameArea";
 
 function App() {
   return (

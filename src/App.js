@@ -6,7 +6,7 @@ import PlayerArea from "./Components/PlayerArea/PlayerArea";
 function App() {
   return (
       <div>
-        <h1>Title</h1>
+          <h1>Title</h1>
           <Link to="/" >Back to start</Link>
           <GameArea />
           <PlayerArea />

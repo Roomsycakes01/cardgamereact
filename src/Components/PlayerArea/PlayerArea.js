@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import useGetData from "../../Hooks/useGetData";
+import Card from "../Atoms/Card";
 
 const PlayerArea = () => {
     const [data, setData] = useState([])
@@ -10,7 +11,8 @@ const PlayerArea = () => {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         setData(await useGetData('/initialCards'))
     },[])
-    useEffect(()=>{
+
+    useEffect(() => {
         let tempArray = []
         data.forEach((card)=>{
             for(let i = 0; i < card.number; i++){
@@ -19,12 +21,21 @@ const PlayerArea = () => {
         })
         setCardArray(tempArray)
     },[data])
-    useEffect(()=>{
-        console.log(cardArray)
-    },[cardArray])
+
+    function showCard(cardArray) {
+        let i = 0
+        let output
+            cardArray === [] ? output = '':
+                output = cardArray.map((card)=>{
+                    i++
+                    return <Card key={i} name={card.name} image={card.imageUrl} />
+                })
+        return output
+    }
+
     return(
         <div>
-            Player Area
+            {showCard(cardArray)}
         </div>
     )
 }

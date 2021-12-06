@@ -8,10 +8,7 @@ import fetchApi from './useFetch';
  * @returns {Promise<*>}
  */
 const useGetData = async (url) => {
-    let response = await fetchApi(url);
-    if (response.success) {
-        return response.data;
-    }
+    return await fetchApi(url);
 };
 
 export default useGetData;
